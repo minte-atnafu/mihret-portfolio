@@ -123,6 +123,7 @@ const ToolLogo = ({ name }) => {
 function App() {
   const [filter, setFilter] = useState('all');
   const [selectedItemId, setSelectedItemId] = useState(null);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
       return window.localStorage.getItem('portfolio-theme') || 'white';
@@ -179,13 +180,24 @@ function App() {
           <a className="brand-mark" href="#top">
             <span className="dot" /> Mihret Erkihun
           </a>
-          <nav className="nav-links">
-            <a href="#work">Poster</a>
-            <a href="#work">Branding</a>
-            <a href="#work">Logo</a>
-            <a href="#work">UI/UX</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-label="Toggle navigation"
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+          <nav className={`nav-links ${menuOpen ? 'open' : ''}`}>
+            <a href="#work" onClick={() => setMenuOpen(false)}>Poster</a>
+            <a href="#work" onClick={() => setMenuOpen(false)}>Branding</a>
+            <a href="#work" onClick={() => setMenuOpen(false)}>Logo</a>
+            <a href="#work" onClick={() => setMenuOpen(false)}>UI/UX</a>
+            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
           </nav>
           <div className="theme-switcher">
             <button

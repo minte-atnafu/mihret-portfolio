@@ -159,6 +159,28 @@ a {
   background: var(--vermilion);
 }
 
+.mobile-menu-btn {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 10px;
+  border-radius: 999px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 18px;
+  height: 1.5px;
+  background: var(--ink);
+}
+
 .nav-links {
   display: flex;
   gap: 24px;
@@ -774,9 +796,13 @@ footer {
   text-transform: uppercase;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .hero-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-copy {
+    max-width: 100%;
   }
 
   .hero-photo-card {
@@ -792,22 +818,81 @@ footer {
   .about-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 900px) {
-  .work-grid {
+  .disciplines {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 680px) {
+@media (max-width: 900px) {
   .site-nav .wrap {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
   }
 
   .nav-links {
-    gap: 14px;
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cta {
+    padding: 88px 0;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero {
+    padding: 72px 0 48px;
+  }
+
+  .site-nav .wrap {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 12px 14px;
+    flex-wrap: wrap;
+  }
+
+  .theme-switcher {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-name {
+    font-size: clamp(40px, 10vw, 64px);
+  }
+
+  .hero-sub {
+    font-size: 17px;
   }
 
   .work-grid {
@@ -815,6 +900,29 @@ footer {
   }
 
   .section-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .disciplines {
+    grid-template-columns: 1fr;
+  }
+
+  .discipline {
+    padding: 28px 22px;
+  }
+
+  .tool-chip {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cta h2 {
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 48px);
+  }
+
+  footer {
     flex-direction: column;
     align-items: flex-start;
   }
