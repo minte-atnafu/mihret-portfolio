@@ -181,6 +181,16 @@ a {
   background: var(--ink);
 }
 
+.nav-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-right: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 .nav-links {
   display: flex;
   gap: 24px;
@@ -397,22 +407,23 @@ a {
 }
 
 .hero-photo-card {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  width: min(100%, 320px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
   padding: 0;
   background: transparent;
-  width: 100%;
-  max-width: 360px;
   margin-left: auto;
+  display: grid;
+  place-items: center;
 }
 
 .hero-photo-card img {
-  width: min(100%, 320px);
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 0;
+  border-radius: 50%;
   box-shadow: none;
 }
 

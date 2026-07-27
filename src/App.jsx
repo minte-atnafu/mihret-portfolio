@@ -37,7 +37,7 @@ const media = {
   begena: new URL('../resources/begena-gubae.jfif', import.meta.url).href,
   menelik: new URL('../resources/menelik-ii-heritage.jfif', import.meta.url).href,
   representBlackness: new URL('../resources/represent-blackness.jfif', import.meta.url).href,
-  chatGptPortrait: new URL('../resources/ChatGPT Image Jul 22, 2026, 11_16_39 PM.png', import.meta.url).href,
+  chatGptPortrait: new URL('../resources/ChatGPT Image Jul 25, 2026, 01_59_05 PM.png', import.meta.url).href,
   photo01: new URL('../resources/photo_2026-07-22_21-38-01.jpg', import.meta.url).href,
   photo05: new URL('../resources/photo_2026-07-22_21-38-05.jpg', import.meta.url).href,
   photo08: new URL('../resources/photo_2026-07-22_21-38-08.jpg', import.meta.url).href,
@@ -177,6 +177,7 @@ function App() {
 
       <header className="site-nav">
         <div className="wrap nav-inner">
+          <img className="nav-avatar" src={media.chatGptPortrait} alt="Mihret Erkihun avatar" />
           <a className="brand-mark" href="#top">
             <span className="dot" /> Mihret Erkihun
           </a>
@@ -227,7 +228,7 @@ function App() {
         <section className="hero">
           <div className="wrap hero-grid">
             <div className="hero-copy">
-              <p className="hero-eyebrow">Graphic &amp; Brand Designer — Addis Ababa</p>
+              <p className="hero-eyebrow">Graphic &amp; UI Designer — Addis Ababa</p>
               <h1 className="hero-name">Mihret Erkihun</h1>
               <p className="hero-sub">
                 I design <strong>posters</strong>, <strong>brand systems</strong>, and <strong>campaign visuals</strong> that feel bold, clear, and memorable.
