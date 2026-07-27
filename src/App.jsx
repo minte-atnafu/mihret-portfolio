@@ -1,32 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 
-const createUiUxMockup = (title, accent, bg) => {
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1800" viewBox="0 0 1400 1800">
-      <rect width="1400" height="1800" fill="${bg}" />
-      <rect x="80" y="80" width="1240" height="1640" rx="28" fill="#ffffff" stroke="#16140F" stroke-opacity="0.12" />
-      <rect x="120" y="120" width="1160" height="120" rx="20" fill="#16140F" />
-      <rect x="160" y="160" width="220" height="32" rx="16" fill="#F4C10F" />
-      <rect x="900" y="160" width="140" height="32" rx="16" fill="#2B3AFF" />
-      <rect x="1050" y="160" width="140" height="32" rx="16" fill="#FF4820" />
-      <rect x="120" y="280" width="460" height="360" rx="24" fill="${accent}" />
-      <rect x="620" y="280" width="660" height="200" rx="24" fill="#F7F4EB" stroke="#16140F" stroke-opacity="0.12" />
-      <rect x="620" y="520" width="320" height="220" rx="24" fill="#F7F4EB" stroke="#16140F" stroke-opacity="0.12" />
-      <rect x="960" y="520" width="320" height="220" rx="24" fill="#F7F4EB" stroke="#16140F" stroke-opacity="0.12" />
-      <rect x="120" y="700" width="1160" height="320" rx="28" fill="#F7F4EB" stroke="#16140F" stroke-opacity="0.12" />
-      <text x="160" y="820" fill="#16140F" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">${title}</text>
-      <text x="160" y="880" fill="#4A4638" font-family="Inter, Arial, sans-serif" font-size="28">A modular dashboard experience for product storytelling.</text>
-      <rect x="160" y="930" width="260" height="44" rx="22" fill="#16140F" />
-      <rect x="430" y="930" width="220" height="44" rx="22" fill="#FF4820" />
-      <rect x="120" y="1070" width="360" height="160" rx="24" fill="#16140F" />
-      <rect x="520" y="1070" width="360" height="160" rx="24" fill="#2B3AFF" />
-      <rect x="920" y="1070" width="360" height="160" rx="24" fill="#F4C10F" />
-      <rect x="120" y="1280" width="1160" height="320" rx="28" fill="#F7F4EB" stroke="#16140F" stroke-opacity="0.12" />
-    </svg>`;
+// UI/UX image sets (use real screenshot files from /resources)
+const uiUxSetA = [
+  new URL('../resources/Screenshot (11).png', import.meta.url).href,
+];
 
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
-};
+const uiUxSetB = [
+  new URL('../resources/Screenshot (12).png', import.meta.url).href,
+  new URL('../resources/Screenshot (13).png', import.meta.url).href,
+];
 
+const uiUxSetC = [
+  new URL('../resources/Screenshot (14).png', import.meta.url).href,
+  new URL('../resources/Screenshot (15).png', import.meta.url).href,
+  new URL('../resources/Screenshot (16).png', import.meta.url).href,
+  new URL('../resources/Screenshot (17).png', import.meta.url).href,
+  new URL('../resources/Screenshot (19).png', import.meta.url).href,
+];
 const media = {
   merkeb: new URL('../resources/merkeb-branding.jpg', import.meta.url).href,
   papillon: new URL('../resources/papillon-full-branding.jpg', import.meta.url).href,
@@ -46,12 +36,6 @@ const media = {
   photo18: new URL('../resources/photo_2026-07-22_21-38-18.jpg', import.meta.url).href,
 };
 
-const uiUxMocks = [
-  createUiUxMockup('North Studio', '#2B3AFF', '#F4F2EA'),
-  createUiUxMockup('Kebena Commerce', '#FF4820', '#F9F3E8'),
-  createUiUxMockup('Mela App', '#F4C10F', '#F6F2EA'),
-];
-
 const workItems = [
   { id: 'merkeb', category: 'branding', year: '2026', title: 'Merkeb Multimedia — Full branding system', image: media.merkeb },
   { id: 'papillon', category: 'branding', year: '2026', title: 'Papillon Dress — Full brand identity', image: media.papillon },
@@ -68,9 +52,9 @@ const workItems = [
   { id: 'photo11', category: 'logo', year: '2026', title: 'Visual Mark — Brand study 04', image: media.photo11 },
   { id: 'photo15', category: 'logo', year: '2026', title: 'Visual Mark — Brand study 05', image: media.photo15 },
   { id: 'photo18', category: 'logo', year: '2026', title: 'Visual Mark — Brand study 06', image: media.photo18 },
-  { id: 'uiux-1', category: 'uiux', year: '2026', title: 'North Studio — Web experience', image: uiUxMocks[0] },
-  { id: 'uiux-2', category: 'uiux', year: '2026', title: 'Kebena Commerce — Commerce experience', image: uiUxMocks[1] },
-  { id: 'uiux-3', category: 'uiux', year: '2025', title: 'Mela App — Mobile product layout', image: uiUxMocks[2] },
+  { id: 'uiux-1', category: 'uiux', year: '2026', title: 'Analytics — Dashboard design', image: uiUxSetA[0] },
+  { id: 'uiux-2', category: 'uiux', year: '2026', title: 'TeleMareket Commerce — E-commerce app design', image: uiUxSetB[0] },
+  { id: 'uiux-3', category: 'uiux', year: '2025', title: 'Mela App — Reset and Referesh app', image: uiUxSetC[0] },
 ];
 
 const filters = [
@@ -123,6 +107,7 @@ const ToolLogo = ({ name }) => {
 function App() {
   const [filter, setFilter] = useState('all');
   const [selectedItemId, setSelectedItemId] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -149,20 +134,25 @@ function App() {
   );
 
   const selectedItem = visibleItems.find((item) => item.id === selectedItemId) ?? null;
-  const uiUxItems = visibleItems.filter((item) => item.category === 'uiux');
-  const selectedUiUxIndex = selectedItem?.category === 'uiux'
-    ? uiUxItems.findIndex((item) => item.id === selectedItem.id)
-    : -1;
+
+  // Map UI/UX work ids to their image arrays
+  const imagesMap = {
+    'uiux-1': uiUxSetA,
+    'uiux-2': uiUxSetB,
+    'uiux-3': uiUxSetC,
+  };
 
   const showPrev = () => {
-    if (selectedItem?.category === 'uiux' && selectedUiUxIndex > 0) {
-      setSelectedItemId(uiUxItems[selectedUiUxIndex - 1].id);
+    if (selectedItem?.category === 'uiux') {
+      const imgs = imagesMap[selectedItem.id] || [];
+      if (selectedImageIndex > 0) setSelectedImageIndex((i) => i - 1);
     }
   };
 
   const showNext = () => {
-    if (selectedItem?.category === 'uiux' && selectedUiUxIndex >= 0 && selectedUiUxIndex < uiUxItems.length - 1) {
-      setSelectedItemId(uiUxItems[selectedUiUxIndex + 1].id);
+    if (selectedItem?.category === 'uiux') {
+      const imgs = imagesMap[selectedItem.id] || [];
+      if (selectedImageIndex < imgs.length - 1) setSelectedImageIndex((i) => i + 1);
     }
   };
 
@@ -272,7 +262,7 @@ function App() {
                   key={item.id}
                   className="work-card"
                   data-cat={item.category}
-                  onClick={() => setSelectedItemId(item.id)}
+                  onClick={() => { setSelectedItemId(item.id); setSelectedImageIndex(0); }}
                 >
                   <div className="work-thumb">
                     <img src={item.image} alt={item.title} loading="lazy" />
@@ -385,12 +375,15 @@ function App() {
         <div className="lightbox-backdrop" onClick={() => setSelectedItemId(null)}>
           <div className="lightbox" onClick={(e) => e.stopPropagation()}>
             <button className="lightbox-close" onClick={() => setSelectedItemId(null)} aria-label="Close preview">×</button>
-            {selectedItem.category === 'uiux' && selectedUiUxIndex > 0 && (
-              <button className="lightbox-nav prev" onClick={showPrev} aria-label="Previous UI/UX project">←</button>
+            {selectedItem.category === 'uiux' && selectedImageIndex > 0 && (
+              <button className="lightbox-nav prev" onClick={showPrev} aria-label="Previous image">←</button>
             )}
-            <img src={selectedItem.image} alt={selectedItem.title} />
-            {selectedItem.category === 'uiux' && selectedUiUxIndex >= 0 && selectedUiUxIndex < uiUxItems.length - 1 && (
-              <button className="lightbox-nav next" onClick={showNext} aria-label="Next UI/UX project">→</button>
+            <img
+              src={selectedItem.category === 'uiux' ? (imagesMap[selectedItem.id] || [selectedItem.image])[selectedImageIndex] : selectedItem.image}
+              alt={selectedItem.title}
+            />
+            {selectedItem.category === 'uiux' && ((imagesMap[selectedItem.id] || []).length - 1) > selectedImageIndex && (
+              <button className="lightbox-nav next" onClick={showNext} aria-label="Next image">→</button>
             )}
             <div className="lightbox-caption">
               <span>{selectedItem.category === 'poster' ? 'Poster' : selectedItem.category === 'logo' ? 'Logo' : selectedItem.category === 'uiux' ? 'UI/UX' : 'Branding'}</span>
