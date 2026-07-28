@@ -2,13 +2,13 @@ import { useEffect, useMemo, useState } from 'react';
 
 // UI/UX image sets — replace paths with your screenshots later
 const uiUxSetA = [
+  new URL('../resources/Screenshot (11).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (30).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (28).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (31).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (29).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (32).png', import.meta.url).href,
   new URL('../resources/dashboad/Screenshot (11).png', import.meta.url).href,
-  new URL('../resources/Screenshot (11).png', import.meta.url).href,
 ];
 
 const uiUxSetB = [
@@ -21,51 +21,61 @@ const uiUxSetB = [
 ];
 
 const uiUxSetC = [
-  new URL('../resources/Screenshot (14).png', import.meta.url).href,
-  new URL('../resources/Screenshot (15).png', import.meta.url).href,
-  new URL('../resources/Screenshot (16).png', import.meta.url).href,
-  new URL('../resources/Screenshot (17).png', import.meta.url).href,
-  new URL('../resources/Screenshot (19).png', import.meta.url).href,
+  new URL('../resources/todo/Screenshot (51).png', import.meta.url).href,
+  new URL('../resources/todo/Screenshot (52).png', import.meta.url).href,
+  new URL('../resources/todo/Screenshot (53).png', import.meta.url).href,
+  new URL('../resources/todo/Screenshot (54).png', import.meta.url).href,
 ];
 
 const uiUxSetD = [
-  new URL('../resources/Screenshot (14).png', import.meta.url).href,
-  new URL('../resources/Screenshot (15).png', import.meta.url).href,
-  new URL('../resources/Screenshot (16).png', import.meta.url).href,
-  new URL('../resources/Screenshot (17).png', import.meta.url).href,
-  new URL('../resources/Screenshot (19).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (40).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (35).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (36).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (37).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (38).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (39).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (41).png', import.meta.url).href,
+  new URL('../resources/TeleMarket/Screenshot (42).png', import.meta.url).href,
 ];
-// Branding multi-photo sets — replace with your real branding photos
+
+const uiUxSetE = [
+  new URL('../resources/portfolio/Screenshot (44).png', import.meta.url).href,
+  new URL('../resources/portfolio/Screenshot (45).png', import.meta.url).href,
+  new URL('../resources/portfolio/Screenshot (46).png', import.meta.url).href,
+  new URL('../resources/portfolio/Screenshot (47).png', import.meta.url).href,
+];
+
+const uiUxSetF = [
+  new URL('../resources/Gift/Screenshot (48).png', import.meta.url).href,
+  new URL('../resources/Gift/Screenshot (49).png', import.meta.url).href,
+  new URL('../resources/Gift/Screenshot (50).png', import.meta.url).href,
+];
+
+// Branding multi-photo sets
 const brandingSetMerkeb = [
   new URL('../resources/merkeb-branding.jpg', import.meta.url).href,
-  // new URL('../resources/merkeb-2.jpg', import.meta.url).href,
-  // new URL('../resources/merkeb-3.jpg', import.meta.url).href,
 ];
 
 const brandingSetPapillon = [
   new URL('../resources/papillon-full-branding.jpg', import.meta.url).href,
-  // new URL('../resources/papillon-2.jpg', import.meta.url).href,
 ];
 
 const brandingSetRock = [
   new URL('../resources/rock-full-branding.jpg', import.meta.url).href,
-  // new URL('../resources/rock-2.jpg', import.meta.url).href,
 ];
 
 const brandingSetMenelik = [
   new URL('../resources/menelik-ii-heritage.jfif', import.meta.url).href,
-  // new URL('../resources/menelik-2.jpg', import.meta.url).href,
 ];
 
-// NEW branding project — 5 photo slots (replace paths with yours)
+// NEW branding project — SESEN Global
 const brandingSetNew = [
-  new URL('../resources/sense/photo_2026-07-28_15-55-49.jpg', import.meta.url).href,      
+  new URL('../resources/sense/photo_2026-07-28_15-55-58.jpg', import.meta.url).href,
+  new URL('../resources/sense/photo_2026-07-28_15-55-49.jpg', import.meta.url).href,
   new URL('../resources/sense/photo_2026-07-28_15-55-52.jpg', import.meta.url).href,
   new URL('../resources/sense/photo_2026-07-28_15-55-55.jpg', import.meta.url).href,
-  new URL('../resources/sense/photo_2026-07-28_15-55-58.jpg', import.meta.url).href,
   new URL('../resources/sense/photo_2026-07-28_15-55-01.jpg', import.meta.url).href,
 ];
-  
 
 const media = {
   merkeb: new URL('../resources/merkeb-branding.jpg', import.meta.url).href,
@@ -90,14 +100,6 @@ const media = {
 const workItems = [
   // UI/UX
   {
-    id: 'uiux-1',
-    category: 'uiux',
-    year: '2026',
-    title: 'Analytics — Dashboard design',
-    image: uiUxSetA[0],
-    link: 'https://analytics-dashboard-ui-one.vercel.app/',
-  },
-  {
     id: 'uiux-2',
     category: 'uiux',
     year: '2026',
@@ -106,20 +108,53 @@ const workItems = [
     link: 'https://mintesinotatnafu81.wixsite.com/mihret-cosmetics',
   },
   {
+    id: 'uiux-5',
+    category: 'uiux',
+    year: '2025',
+    title: 'Portfolio— My portfolio website design and development',
+    image: uiUxSetE[0],
+    link: 'https://mihret-portfolio-puce.vercel.app/',
+  },
+  {
     id: 'uiux-3',
     category: 'uiux',
     year: '2025',
-    title: 'Mela App — Reset and Refresh app',
+    title: 'TODO App — Reset and Refresh app',
     image: uiUxSetC[0],
     link: 'https://www.figma.com/',
   },
+  {
+    id: 'uiux-6',
+    category: 'uiux',
+    year: '2025',
+    title: 'Gift website— A gift website design and development',
+    image: uiUxSetF[0],
+    link: 'https://mihret-portfolio-puce.vercel.app/',
+  },
+  {
+    id: 'uiux-1',
+    category: 'uiux',
+    year: '2026',
+    title: 'Analytics — Dashboard design',
+    image: uiUxSetA[0],
+    link: 'https://analytics-dashboard-ui-one.vercel.app/',
+  },
+  {
+    id: 'uiux-4',
+    category: 'uiux',
+    year: '2025',
+    title: 'TeleMarket— Ecommerce and marketing app',
+    image: uiUxSetD[0],
+    link: 'https://www.figma.com/',
+  },
+
   // Branding
-    // NEW branding card — replace title / year / images
   {
     id: 'branding-new',
     category: 'branding',
     year: '2026',
     title: 'SESEN Global — Full identity system',
+    link: 'http://sesenglobalhklimited.com/',
     image: brandingSetNew[0],
   },
   {
@@ -156,7 +191,6 @@ const workItems = [
   { id: 'photo11', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 04', image: media.photo11 },
   { id: 'photo15', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 05', image: media.photo15 },
   { id: 'photo18', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 06', image: media.photo18 },
- 
 ];
 
 const filters = [
@@ -217,11 +251,14 @@ function App() {
     return 'black';
   });
 
-  // Multi-image map for UI/UX + Branding (arrows appear when length > 1)
+  // Multi-image map for UI/UX + Branding
   const imagesMap = {
     'uiux-1': uiUxSetA,
     'uiux-2': uiUxSetB,
     'uiux-3': uiUxSetC,
+    'uiux-4': uiUxSetD,
+    'uiux-5': uiUxSetE,
+    'uiux-6': uiUxSetF,
     merkeb: brandingSetMerkeb,
     papillon: brandingSetPapillon,
     rock: brandingSetRock,
@@ -341,8 +378,17 @@ function App() {
                 <strong>UI/UX experiences</strong> that feel bold, clear, and memorable.
               </p>
             </div>
-            <div className="hero-photo-card" aria-label="Portrait">
-              <img src={media.chatGptPortrait} alt="Mihret Erkihun portrait" />
+
+            {/* Hero photo with revolving orbit motion */}
+            <div className="hero-photo-wrap" aria-label="Portrait">
+              <div className="hero-orbit" aria-hidden="true">
+                <span className="orbit-dot d1" />
+                <span className="orbit-dot d2" />
+                <span className="orbit-dot d3" />
+              </div>
+              <div className="hero-photo-card">
+                <img src={media.chatGptPortrait} alt="Mihret Erkihun portrait" />
+              </div>
             </div>
           </div>
         </section>
@@ -403,7 +449,21 @@ function App() {
                       </span>
                       <span>{item.year}</span>
                     </div>
-                    <div className="work-title">{item.title}</div>
+                    <div className="work-title">
+                      {item.title}
+                      {item.link && (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="work-title-link"
+                          onClick={(e) => e.stopPropagation()}
+                          title="Open live project"
+                        >
+                          ↗
+                        </a>
+                      )}
+                    </div>
                   </figcaption>
                 </figure>
               ))}
@@ -595,7 +655,7 @@ function App() {
               </div>
               <h3>{selectedItem.title}</h3>
 
-              {selectedItem.category === 'uiux' && selectedItem.link && (
+              {selectedItem.link && (
                 <a
                   className="lightbox-external"
                   href={selectedItem.link}
