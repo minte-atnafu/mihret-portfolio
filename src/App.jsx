@@ -20,6 +20,9 @@ const media = {
   lion: asset('lion-of-judah.jfif'),
   habesha: asset('habesha.jpg'),
   proud: asset('Proud.jpg'),
+  water: asset('water.jpg'),
+  mursi: asset('mursi.jpg'),
+  hamer: asset('hamer.jpg'),
   afro: asset('afro-magazine-cover.jfif'),
   registration: asset('registration-social-poster.jfif'),
   nostalgic: asset('Nostalgia.jfif'),
@@ -47,15 +50,7 @@ const uiSets = {
 
 const projects = [
   { id: 'mihret', type: 'UI/UX', year: '2026', title: 'Mihret Cosmetics', description: 'A considered e-commerce experience for a cosmetics brand.', image: uiSets.mihret[0], images: uiSets.mihret, link: 'https://mintesinotatnafu81.wixsite.com/mihret-cosmetics', featured: true },
-  { id: 'sesen', type: 'Branding', year: '2026', title: 'SESEN Global', description: 'A complete identity system for a global creative venture.', image: sesenImages[0], images: sesenImages, link: 'http://sesenglobalhklimited.com/', featured: true },
-  { id: 'zenach', type: 'Branding', year: '2026', title: 'Zenach', description: 'Full identity system.', image: media.zenach, images: [media.zenach] },
-  { id: 'brana', type: 'Branding', year: '2026', title: 'BRANA arts', description: 'Full identity system.', image: media.brana, images: [media.brana] },
-  { id: 'daw', type: 'Branding', year: '2026', title: 'DAW PLC', description: 'Full identity system.', image: media.daw, images: [media.daw] },
-  { id: 'merkeb', type: 'Branding', year: '2026', title: 'Merkeb Multimedia', description: 'Full branding system.', image: media.merkeb, images: [media.merkeb] },
-  { id: 'muya', type: 'Branding', year: '2026', title: 'Muya Podcast', description: 'Full branding system.', image: media.muya, images: [media.muya] },
-  { id: 'papillon', type: 'Branding', year: '2026', title: 'Papillon Dress', description: 'Full brand identity.', image: media.papillon, images: [media.papillon] },
-  { id: 'rock', type: 'Branding', year: '2025', title: 'Rock Coffee', description: 'Brand identity system.', image: media.rock, images: [media.rock] },
-   { id: 'proud', type: 'Poster', year: '2026', title: 'Proud Ethiopian', description: 'Cultural poster campaign.', image: media.proud, images: [media.proud] },
+    { id: 'proud', type: 'Poster', year: '2026', title: 'Proud Ethiopian', description: 'Cultural poster campaign.', image: media.proud, images: [media.proud] },
    {id: 'gonder', type: 'Poster', year: '2026', title: 'The Gonderian', description: 'Cultural poster campaign.', image: media.gonder, images: [media.gonder] },
   { id: 'lion', type: 'Poster', year: '2026', title: 'Lion of Judah', description: 'Cultural poster campaign.', image: media.lion, images: [media.lion] },
   { id: 'bunna', type: 'Poster', year: '2025', title: 'The Coffee', description: 'Event poster.', image: media.bunna, images: [media.bunna] },
@@ -68,12 +63,24 @@ const projects = [
   { id: 'begena', type: 'Poster', year: '2025', title: 'Begena Gubae', description: 'Event poster.', image: media.begena, images: [media.begena] },
   { id: 'nostalgic', type: 'Poster', year: '2025', title: 'Nostalgic', description: 'Campaign poster.', image: media.nostalgic, images: [media.nostalgic] },
   { id: 'music', type: 'Poster', year: '2025', title: 'Music', description: 'Campaign poster.', image: media.music, images: [media.music] },
+  { id: 'water', type: 'Poster', year: '2025', title: 'Water', description: 'Campaign poster.', image: media.water, images: [media.water] },
+  { id: 'hamer', type: 'Poster', year: '2025', title: 'Hamer', description: 'Campaign poster.', image: media.hamer, images: [media.hamer] },
+  { id: 'mursi', type: 'Poster', year: '2025', title: 'Mursi', description: 'Campaign poster.', image: media.mursi, images: [media.mursi] },
+
   { id: 'represent', type: 'Poster', year: '2025', title: 'Represent Blackness', description: 'Campaign poster.', image: media.represent, images: [media.represent] },
+  { id: 'zenach', type: 'Branding', year: '2026', title: 'Zenach', description: 'Full identity system.', image: media.zenach, images: [media.zenach] },
+  { id: 'brana', type: 'Branding', year: '2026', title: 'BRANA arts', description: 'Full identity system.', image: media.brana, images: [media.brana] },
+  { id: 'daw', type: 'Branding', year: '2026', title: 'DAW PLC', description: 'Full identity system.', image: media.daw, images: [media.daw] },
+  { id: 'merkeb', type: 'Branding', year: '2026', title: 'Merkeb Multimedia', description: 'Full branding system.', image: media.merkeb, images: [media.merkeb] },
+  { id: 'muya', type: 'Branding', year: '2026', title: 'Muya Podcast', description: 'Full branding system.', image: media.muya, images: [media.muya] },
+  { id: 'papillon', type: 'Branding', year: '2026', title: 'Papillon Dress', description: 'Full brand identity.', image: media.papillon, images: [media.papillon] },
+  { id: 'rock', type: 'Branding', year: '2025', title: 'Rock Coffee', description: 'Brand identity system.', image: media.rock, images: [media.rock] },
   { id: 'todo', type: 'UI/UX', year: '2025', title: 'TODO App', description: 'A reset-and-refresh productivity experience.', image: uiSets.todo[0], images: uiSets.todo, link: 'https://www.figma.com/' },
   { id: 'telemarket', type: 'UI/UX', year: '2025', title: 'TeleMarket', description: 'E-commerce and marketing app.', image: uiSets.telemarket[0], images: uiSets.telemarket, link: 'https://www.figma.com/' },
   { id: 'portfolio', type: 'UI/UX', year: '2025', title: 'Portfolio Website', description: 'Portfolio website design and development.', image: uiSets.portfolio[0], images: uiSets.portfolio, link: 'https://mihret-portfolio-puce.vercel.app/' },
   { id: 'gift', type: 'UI/UX', year: '2025', title: 'Gift Website', description: 'A warm digital gifting experience.', image: uiSets.gift[0], images: uiSets.gift, link: 'https://mihret-portfolio-puce.vercel.app/' },
   { id: 'analytics', type: 'UI/UX', year: '2026', title: 'Analytics Dashboard', description: 'A focused data interface with clarity at its core.', image: uiSets.analytics[0], images: uiSets.analytics, link: 'https://analytics-dashboard-ui-one.vercel.app/' },
+  { id: 'sesen', type: 'Branding', year: '2026', title: 'SESEN Global', description: 'A complete identity system for a global creative venture.', image: sesenImages[0], images: sesenImages, link: 'http://sesenglobalhklimited.com/' },
 ];
 
 const filters = ['All', 'UI/UX', 'Branding', 'Poster'];
@@ -138,7 +145,7 @@ function App() {
 
         <section className="principles"><div className="wrap principles-layout"><div><p className="eyebrow">03 / The practice</p><h2>Make it<br /><em>meaningful.</em></h2></div><div className="principle-list"><div><span>01</span><h3>Find the signal</h3><p>Strategy before surface. I look for the essential idea and give it enough space to be understood.</p></div><div><span>02</span><h3>Build the system</h3><p>Strong identities are flexible. Every mark, typeface and interaction works together as one language.</p></div><div><span>03</span><h3>Make it resonate</h3><p>Design should be useful, but never forgettable. The details are where clarity becomes feeling.</p></div></div></div></section>
 
-        <section id="about" className="about-section wrap"><div className="about-image"><img src={media.portrait} alt="Portrait of Mihret Erkihun" /><span>Based in<br /><strong>Addis Ababa</strong></span></div><div className="about-copy"><p className="eyebrow">04 / About</p><h2>A designer with<br /><em>a point of view.</em></h2><p>I’m Mihret Erkihun, a graphic and brand designer working across UI/UX, identities, posters and campaign visuals. My approach is simple: reduce until only the essential marks remain, then place them with intent.</p><div className="tool-list"><span>Figma</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span></div></div></section>
+        <section id="about" className="about-section wrap"><div><p className="eyebrow">04 / About</p><h2>A designer with<br /><em>a point of view.</em></h2></div><div className="about-copy"><p>I’m Mihret Erkihun, a graphic and brand designer working across UI/UX, identities, posters and campaign visuals. My approach is simple: reduce until only the essential marks remain, then place them with intent.</p><div className="tool-list"><span>Figma</span><span>Illustrator</span><span>Photoshop</span><span>InDesign</span></div></div></section>
 
         <section id="contact" className="contact-section"><div className="wrap"><p className="eyebrow">Start a conversation</p><h2>Have an idea<br /><em>worth making?</em></h2><a className="contact-email" href="mailto:mhireterkihunsep@gmail.com">mhireterkihunsep@gmail.com <span>↗</span></a><div className="socials"><a href="https://instagram.com/phinhans4" target="_blank" rel="noreferrer">Instagram</a><a href="https://t.me/Binthakim19" target="_blank" rel="noreferrer">Telegram</a></div></div></section>
       </main>
