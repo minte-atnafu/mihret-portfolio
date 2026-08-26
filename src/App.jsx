@@ -94,6 +94,20 @@ function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('portfolio-theme') || 'dark');
 
   useEffect(() => {
+    const cards = document.querySelectorAll('.project-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    cards.forEach((card) => observer.observe(card));
+    return () => observer.disconnect();
+  }, [filter]);
+
+  useEffect(() => {
     document.documentElement.dataset.theme = theme;
     localStorage.setItem('portfolio-theme', theme);
   }, [theme]);
