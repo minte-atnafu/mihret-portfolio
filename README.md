@@ -27,6 +27,7 @@ The site is designed with a typography-led editorial layout, light and dark them
 - Scroll reveal animation for project cards
 - Direct links to selected live projects
 - Reduced-motion support for accessibility
+- Automatic contact form delivery through Formspree
 
 ## Tech Stack
 
@@ -94,6 +95,14 @@ When adding a project:
 4. Set the project type to `UI/UX`, `Branding`, or `Poster` so filtering works correctly.
 
 ## Contact
+
+### Configure Formspree
+
+1. Create a form at [formspree.io](https://formspree.io/) and set its destination email to `mhireterkihunsep@gmail.com`.
+2. Copy the form endpoint provided by Formspree.
+3. Replace `REPLACE_WITH_FORM_ID` in `src/App.jsx` with the endpoint ID.
+
+The contact form then sends submissions directly through Formspree instead of opening the visitor's email application.
 
 - Email: [mhireterkihunsep@gmail.com](mailto:mhireterkihunsep@gmail.com)
 - Instagram: [@phinhans4](https://instagram.com/phinhans4)
