@@ -92,9 +92,9 @@ const media = {
   photo01: new URL('../resources/photo_2026-07-22_21-38-01.jpg', import.meta.url).href,
   photo05: new URL('../resources/photo_2026-07-22_21-38-05.jpg', import.meta.url).href,
   photo08: new URL('../resources/photo_2026-07-22_21-38-08.jpg', import.meta.url).href,
-  photo11: new URL('../resources/photo_2026-07-22_21-38-11.jpg', import.meta.url).href,
-  photo15: new URL('../resources/photo_2026-07-22_21-38-15.jpg', import.meta.url).href,
-  photo18: new URL('../resources/photo_2026-07-22_21-38-18.jpg', import.meta.url).href,
+  photo11: new URL('../resources/photo_5794083454549954377_x.jpg', import.meta.url).href,
+  photo15: new URL('../resources/photo_5794083454549954371_y.jpg', import.meta.url).href,
+  photo18: new URL('../resources/photo_5794083454549954370_x.jpg', import.meta.url).href,
 };
 
 const workItems = [
@@ -186,7 +186,6 @@ const workItems = [
   { id: 'begena', category: 'poster', year: '2025', title: 'Begena Gubae — Event poster', image: media.begena },
   { id: 'represent', category: 'poster', year: '2025', title: 'Represent Blackness — Campaign poster', image: media.representBlackness },
   { id: 'photo01', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 01', image: media.photo01 },
-  { id: 'photo05', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 02', image: media.photo05 },
   { id: 'photo08', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 03', image: media.photo08 },
   { id: 'photo11', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 04', image: media.photo11 },
   { id: 'photo15', category: 'poster', year: '2026', title: 'Visual Mark — Brand study 05', image: media.photo15 },
