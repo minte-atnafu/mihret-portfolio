@@ -46,6 +46,8 @@ const uiSets = {
   telemarket: ['TeleMarket/Screenshot (40).png', 'TeleMarket/Screenshot (35).png', 'TeleMarket/Screenshot (36).png', 'TeleMarket/Screenshot (37).png', 'TeleMarket/Screenshot (38).png', 'TeleMarket/Screenshot (39).png', 'TeleMarket/Screenshot (41).png', 'TeleMarket/Screenshot (42).png'].map(asset),
   portfolio: ['portfolio/Screenshot (44).png', 'portfolio/Screenshot (45).png', 'portfolio/Screenshot (46).png', 'portfolio/Screenshot (47).png'].map(asset),
   gift: ['Gift/Screenshot (48).png', 'Gift/Screenshot (49).png', 'Gift/Screenshot (50).png'].map(asset),
+  winget: ['winget/Screenshot (8).png', 'winget/Screenshot (9).png', 'winget/Screenshot (10).png', 'winget/Screenshot (11).png', 'winget/Screenshot (12).png', 'winget/Screenshot (13).png'].map(asset),
+  agape: ['agape/Screenshot (14).png', 'agape/Screenshot (15).png', 'agape/Screenshot (16).png', 'agape/Screenshot (17).png', 'agape/Screenshot (18).png'].map(asset),
 };
 
 const projects = [
@@ -75,6 +77,8 @@ const projects = [
   { id: 'muya', type: 'Branding', year: '2026', title: 'Muya Podcast', description: 'Full branding system.', image: media.muya, images: [media.muya] },
   { id: 'papillon', type: 'Branding', year: '2026', title: 'Papillon Dress', description: 'Full brand identity.', image: media.papillon, images: [media.papillon] },
   { id: 'rock', type: 'Branding', year: '2025', title: 'Rock Coffee', description: 'Brand identity system.', image: media.rock, images: [media.rock] },
+  { id: 'winget', type: 'Branding', year: '2026', title: 'Winget One Birr', description: 'Brand identity system.', image: uiSets.winget[0], images: uiSets.winget },
+  { id: 'agape', type: 'Branding', year: '2026', title: 'Agape Charity', description: 'Brand identity system.', image: uiSets.agape[0], images: uiSets.agape },
   { id: 'todo', type: 'UI/UX', year: '2025', title: 'TODO App', description: 'A reset-and-refresh productivity experience.', image: uiSets.todo[0], images: uiSets.todo, link: 'https://www.figma.com/' },
   { id: 'telemarket', type: 'UI/UX', year: '2025', title: 'TeleMarket', description: 'E-commerce and marketing app.', image: uiSets.telemarket[0], images: uiSets.telemarket, link: 'https://www.figma.com/' },
   { id: 'portfolio', type: 'UI/UX', year: '2025', title: 'Portfolio Website', description: 'Portfolio website design and development.', image: uiSets.portfolio[0], images: uiSets.portfolio, link: 'https://mihret-portfolio-puce.vercel.app/' },
